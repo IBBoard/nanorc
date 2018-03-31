@@ -3,9 +3,11 @@
 syntax "HTML" "\.htm[l]?$"
 color brightblue start="<" end=">"
 color red "&[^;[[:space:]]]*;"
-color yellow ""[^"]*"|qq\|.*\|"
-color red "(action|alt|bgcolor|height|href|id|label|longdesc|method|name|onclick|onfocus|onload|onmouseover|rel|size|span|src|style|target|title|type|value|width)="
-color magenta start="<!--" end="-->"
+color yellow "[^ =]+=["']?[^"']+["']"
+color green start="<!--" end="-->"
+color white start="<!DOCTYPE" end=">"
+# xhtml
+color white start="<\?xml" end="\?>"
 
 ## Trailing spaces
 color ,green "[[:space:]]+$"
